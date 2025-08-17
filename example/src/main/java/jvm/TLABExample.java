@@ -1,6 +1,14 @@
 package jvm;
 
 /**
+ * TLAB（Thread-Local Allocation Buffer，线程本地分配缓冲区）是 JVM 为每个线程分配的一块内存缓冲区，用于对象的快速分配。
+ * 每个线程在自己的 TLAB 中分配新对象，避免了多线程竞争堆内存，提高了分配效率。只有当 TLAB 空间不足时，才会回退到全局堆分配。
+ * TLAB 主要用于新生代（Eden 区）对象分配。
+ * <p>
+ * TLB（Translation Lookaside Buffer，快表）是 CPU 内部用于加速虚拟地址到物理地址转换的高速缓存。
+ * 它存储最近使用的页表项，减少每次内存访问都查页表的开销，提高内存访问效率。
+ * TLB 属于硬件层面，和 JVM 的 TLAB（线程本地分配缓冲区）完全不同。
+ * <p>
  * VM 参数（开启或关闭 TLAB）:
  * -XX:+UseTLAB -XX:+PrintGCDetails -XX:+PrintTLAB
  * -XX:-UseTLAB -XX:+PrintGCDetails -XX:+PrintTLAB
