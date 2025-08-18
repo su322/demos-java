@@ -6,6 +6,10 @@ package designpattern;
 
 public class LazySingleton {
     // 单例对象，初始为 null
+    // 正确的方式：加上 volatile 关键字，禁止指令重排
+    // 对象创建过程主要有三步：分配内存空间，初始化对象，将对象引用赋值给变量
+    // JVM 和 CPU 为了优化性能，可能会把“将对象引用赋值给变量”提前到“初始化对象”之前。
+    // 这样，另一个线程可能会在 instance 已经被赋值但对象还没初始化完成时拿到 instance，导致使用到一个未初始化的对象，出现异常或错误。
     private static volatile LazySingleton instance = null;
 
     // 私有构造方法，防止外部实例化
