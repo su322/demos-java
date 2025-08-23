@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * AtomicInteger 内部通过 sun.misc.Unsafe 类直接调用 JVM 的原子指令（如 compareAndSwapInt），实现高效的原子操作。
  */
 
-public class AtomicExample {
+public class AtomicIntegerExample {
     private AtomicInteger atomicCounter = new AtomicInteger(0);
     private int unsafeCounter = 0;
 
@@ -39,7 +39,7 @@ public class AtomicExample {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        AtomicExample example = new AtomicExample();
+        AtomicIntegerExample example = new AtomicIntegerExample();
         int threadCount = 10;
         int incrementsPerThread = 10000;
         Thread[] threads = new Thread[threadCount];

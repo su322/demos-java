@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.threadlocal;
 
 /**
  * ThreadLocal 示例：每个线程拥有独立的变量副本，互不干扰。

@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.lock;
 
 public class SynchronizedExample {
     private int counter = 0;

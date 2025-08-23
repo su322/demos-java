@@ -1,4 +1,4 @@
-package concurrency;
+package concurrency.threadlocal;
 
 public class InheritableThreadLocalExample {
     // 定义一个 InheritableThreadLocal 实例，初始值为 "父线程值"
