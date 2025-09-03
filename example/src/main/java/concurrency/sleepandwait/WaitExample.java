@@ -2,6 +2,10 @@ package concurrency.sleepandwait;
 
 /**
  * 这个是比另外的文件简洁一点的用法示例
+ * <p>
+ * 写到CountDownLatch时增注：
+ * wait 用于低级对象锁同步，需配合 notify/notifyAll，容易出错。
+ * await 用于高级并发工具类，语义清晰，推荐在实际开发中使用。
  */
 
 class WaitExample {

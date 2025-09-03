@@ -23,11 +23,11 @@ public class CASLoopCostProblem {
                         if (atomicInt.compareAndSet(oldValue, oldValue + 1)) {
 //                            System.out.println("线程" + Thread.currentThread() + "抢占成功");
                             break;
+                        } else {
+                            count++;
+                            System.out.println("线程" + Thread.currentThread() + "自旋" + count + "次");
+                            // CAS失败会不断重试，造成性能开销
                         }
-                        // 为什么放在else{}里次数会多出那么多次？
-                        count++;
-                        System.out.println("线程" + Thread.currentThread() + "自旋" + count + "次");
-                        // CAS失败会不断重试，造成性能开销
                     }
                 }
             });

@@ -81,6 +81,7 @@ public class ReentrantLockFeaturesExample {
             try {
                 System.out.println("t2 尝试 tryLock...");
                 // 让线程在指定时间内尝试获取锁，超时后自动放弃，提升系统响应性和健壮性，适合需要避免长时间阻塞的并发场景
+                // tryLock底层用到了自旋锁 就是compareAndSet啥的
                 if (tryLock.tryLock(1, TimeUnit.SECONDS)) {
                     System.out.println("t2 获取到锁");
                     tryLock.unlock();

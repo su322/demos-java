@@ -7,6 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * ReentrantLockConditionExample 演示了如何使用 ReentrantLock 和 Condition 实现生产者-消费者模型。
+ * 另一种见 ../blockingqueue/ArrayBlockingQueueExample.java 底层还是用的 ReentrantLock 和 Condition
  * <p>
  * 主要功能：
  * 1. 使用 ReentrantLock 保证线程安全。
