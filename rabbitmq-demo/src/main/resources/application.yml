@@ -1,0 +1,30 @@
+server:
+    port: 8081
+
+spring:
+    application:
+        name: rabbitmq-demo
+    rabbitmq:
+        host: 127.0.0.1
+        port: 5672 # 默认 AMQP 端口是 5672，15672 是管理界面端口
+        username: guest
+        password: guest
+        virtual-host: /
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/demos_java?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: 11111111
+        hikari:
+            maximum-pool-size: 10 # 最大连接数，建议根据服务器资源设置
+            minimum-idle: 2        # 最小空闲连接数
+            idle-timeout: 60000    # 空闲连接超时时间（毫秒）
+            connection-timeout: 30000 # 获取连接超时时间（毫秒）
+
+mybatis-plus:
+    configuration:
+        map-underscore-to-camel-case: true # 自动将数据库字段的下划线命名（如 user_id）映射为 Java 实体类的驼峰命名（如 userId）
+
+logging:
+    level:
+        io.github.su322.rabbitmqdemo: DEBUG # 你自己的项目包日志
