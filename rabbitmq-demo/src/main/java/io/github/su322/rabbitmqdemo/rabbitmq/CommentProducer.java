@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CommentProducer {
-    private static final String QUEUE_NAME = "comment_queue";
+    private static final String EXCHANGE_NAME = "direct_exchange";
+    private static final String ROUTING_KEY = "comment";
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
     public void sendComment(CommentDO commentDO) {
-        rabbitTemplate.convertAndSend(QUEUE_NAME, commentDO);
+        rabbitTemplate.convertAndSend(EXCHANGE_NAME, ROUTING_KEY, commentDO);
     }
 }
 
