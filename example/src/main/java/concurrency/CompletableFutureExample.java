@@ -3,6 +3,10 @@ package concurrency;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * 可以去看并行访问优化demo，里面有用到
+ */
+
 public class CompletableFutureExample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         // 异步执行任务

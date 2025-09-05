@@ -1,0 +1,7 @@
+package io.github.su322.parallelaccessoptimizationdemo.service;
+
+import java.util.List;
+
+public interface HotService {
+    List<String> getHot();
+}

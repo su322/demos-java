@@ -95,8 +95,9 @@ public class RabbitMQConfig {
     @Bean
     public Queue commentQueue() {
         Map<String, Object> args = new HashMap<>();
-        args.put("x-dead-letter-exchange", "dlx.exchange"); // 死信交换机
-        args.put("x-dead-letter-routing-key", "dlx.routingKey"); // 死信路由键
+        // 运行有error还没管
+//        args.put("x-dead-letter-exchange", "dlx.exchange"); // 死信交换机
+//        args.put("x-dead-letter-routing-key", "dlx.routingKey"); // 死信路由键
         return new Queue("comment_queue", true, false, false, args);
     }
 
