@@ -1,0 +1,20 @@
+spring:
+    application:
+        name: fastexcel-demo
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        # https://cloud.tencent.com/developer/article/2271787 开启批处理
+        url: jdbc:mysql://localhost:3306/demos_java?useUnicode=true&allowPublicKeyRetrieval=true&autoReconnect=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+        username: root
+        password: 11111111
+
+server:
+    port: 8081
+
+mybatis-plus:
+    configuration:
+        map-underscore-to-camel-case: true # 自动将数据库字段的下划线命名（如 user_id）映射为 Java 实体类的驼峰命名（如 userId）
+
+logging:
+    level:
+        io.github.su322.fastexceldemo: DEBUG # 你自己的项目包日志
